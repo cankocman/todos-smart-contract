@@ -3,6 +3,7 @@
   "version": "1.0.0",
   "main": "index.js",
   "license": "MIT",
+  "author": {"name":"Tolga Erdönmez - Can Koçman"},
   "dependencies": {
     "hardhat": "^2.12.7"
   },
