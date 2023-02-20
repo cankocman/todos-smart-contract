@@ -39,11 +39,8 @@ contract ToDoStorage {
         addressToList[msg.sender][todoListIndex].todos[todoItemId] = todo;
     }
 
-    function retrieve(uint256 id) public view returns (string[2][] memory) {
-        (bool found, uint256 todoListIndex) = findToDoListIndex(id);
-        if (!found) return new string[2][](0);
-
-        return addressToList[msg.sender][todoListIndex].todos;
+    function getTodoLists() public view returns (ToDoList[] memory) {
+        return addressToList[msg.sender];
     }
 
     function removeTodo(uint todoListId, uint256 todoItemId) public {
