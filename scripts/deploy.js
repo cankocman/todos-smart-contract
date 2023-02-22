@@ -6,6 +6,20 @@ async function main() {
   console.log("Deploying...");
   const todoStorage = await ToDoStorageFactory.deploy();
   await todoStorage.deployed();
+
+  const setToDoList = await todoStorage.createToDoList("Başarmak için atılcak adımlar!", [
+    "Yola çık!",
+    "Yumurta al!",
+    "Salça al!",
+    "Tekirdağ'a git!",
+    "Köfteni ye!",
+    "Dön.",
+  ]);
+  await setToDoList.wait(1);
+
+  const lists = await todoStorage.getTodoLists();
+  console.log(lists);
+  console.log(todoStorage.address);
 }
 
 // We recommend this pattern to be able to use async/await everywhere
