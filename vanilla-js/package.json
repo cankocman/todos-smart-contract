@@ -1,0 +1,5 @@
+{
+  "devDependencies": {
+    "ethers": "^6.0.5"
+  }
+}
